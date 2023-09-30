@@ -2,18 +2,19 @@ import random as rand
 
 
 class DiceRoller:
+    # These are unicode charecters of respective dice values
     dice = {1: '\u2680', 2: '\u2681', 3: '\u2682', 4: '\u2683', 5: '\u2684', 6: '\u2685'}
 
     def roller(self):
         num = rand.randint(1, 6)
-        for i in self.dice:
+        for i in self.dice:  # loop to iterate through the dice
             if i == num:
-                print("\n\t",self.dice[i])
+                print("\n\t", self.dice[i])
 
 
 d = DiceRoller()  # Instance created for the class
 
-e_val=True
+e_val = True
 
 # Checking the input and providing appropriate response
 while e_val:
@@ -28,6 +29,3 @@ while e_val:
     else:
         print("Plese select a valid option")
         continue
-
-
-
