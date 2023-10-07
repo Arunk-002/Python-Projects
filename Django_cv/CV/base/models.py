@@ -7,3 +7,9 @@ class skills(models.Model):
 
     def __str__(self):
         return self.skill
+class about(models.Model):
+    about_sec=models.TextField()
+    self_pic=models.ImageField()
+
+    def __str__(self):
+        return self.about_sec
