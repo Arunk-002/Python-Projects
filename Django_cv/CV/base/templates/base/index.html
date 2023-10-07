@@ -6,9 +6,9 @@
     <title>MY CV</title>
 </head>
 <body>
-    skills
-    {{for skill skils}}
-        skill :{{skill.skill}}
-    {{ end for }}
+    skills:
+    {% for i in skils %}
+        <h3>{{ i.skill }}</h3>
+    {% endfor %}
 </body>
-</html>
+</html> 
