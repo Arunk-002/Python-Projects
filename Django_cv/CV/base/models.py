@@ -13,3 +13,16 @@ class about(models.Model):
 
     def __str__(self):
         return self.about_sec
+class carousel(models.Model):
+    p_image=models.ImageField()
+    p_description=models.TextField()
+    p_link=models.CharField(blank=False,max_length=200)
+
+    def __str__(self):
+        return self.p_description
+
+class footer(models.Model):
+    s_links=models.CharField(max_length=200)
+    s_photo=models.ImageField()
+    def __str__(self):
+        return self.s_links

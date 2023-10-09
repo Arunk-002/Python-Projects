@@ -14,11 +14,11 @@
             margin-top: 150px;
             margin-left: 300px;
         }
-        .skills{
+        .skills,.project{
             margin-top: 50px;
             margin-left: 300px;
         }
-        .sk_photo{
+        .sk_photo,.footer-image{
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -26,6 +26,21 @@
         .skill-row{
             margin-top:50px ;
         }
+        .carousel-inner .carousel-item img {
+            max-height: 250px; 
+        }
+        #carouselExampleCaptions {
+            margin-top: 50px; 
+            max-width: 600px;
+        }
+        .footer-image{
+            margin-top: 50px;
+            margin-left: 10px;
+        }
+        a{
+            text-decoration: none;
+        }
+
     </style>
     <title>MY CV</title>
 </head>
@@ -89,15 +104,64 @@
                     </div>
                 </div>
         {% endfor %}
-        
         </div>
     </div>
 </div>
 
-
-
-
 <!-- ---------------------------------------- -->
 
+
+<!-- ------------------------project------------------ -->
+
+<div class="container">
+    <div class="project">
+        <h3>Project</h3>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                {% for items in Carousel %}
+                    <div   div class="carousel-item active">
+                        <a href="{{ items.p_link }}" target="_blank">
+                            <img src="{{ items.p_image.url}}" class="d-block w-100" alt="...">
+                        </a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <p>{{ items.p_description }}</p>
+                          </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+ 
+
+
+
+<!-- ------------------------------------------------------ -->
+
+
+
+<!-- ---------------------------footer-------------- -->
+
+
+<footer class="text-center text-white" style="background-color: #f1f1f1;">
+    <div class="container">
+        {% for item in Footer %}
+            <a href="{{item.s_links}}" target="_blank">
+                <img class="footer-image" src="{{item.s_photo.url}}" alt="social media links">
+            </a>
+        {% endfor %}
+    </div>
+</footer>
+
+
+<!-- ------------------------------------------------------ -->
 </body>
 </html> 
