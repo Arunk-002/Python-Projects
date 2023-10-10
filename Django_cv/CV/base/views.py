@@ -9,3 +9,7 @@ def Home(request):
     Footer=footer.objects.all()
     context={'skils':skils,'About':About,'Carousel':Carousel,'Footer':Footer}
     return render(request,'base/index.html',context)
+
+def Contact(request):
+    Footer=footer.objects.all()
+    return render(request,'base/contact.html',{'Footer':Footer})
