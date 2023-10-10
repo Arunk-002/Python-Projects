@@ -26,3 +26,10 @@ class footer(models.Model):
     s_photo=models.ImageField()
     def __str__(self):
         return self.s_links
+    
+class contact(models.Model):
+    name=models.CharField(blank=False,max_length=150)
+    email=models.EmailField(blank=False)
+    message=models.TextField()
+    def __str__(self):
+        return self.name

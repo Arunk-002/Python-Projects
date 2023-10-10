@@ -15,6 +15,7 @@
 }
     .container{
         margin: auto;
+        margin-top: 150px;
         padding-bottom: 60px;
     }
 
@@ -22,5 +23,11 @@
 {% endblock %}
 
 {% block body %}
-<h3>this is body</h3>
+<div class="container">
+    <form action="{% url 'contact' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+</div>
 {% endblock %}
