@@ -41,6 +41,16 @@
     a{
         text-decoration: none;
     }
+    .self-img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: 50px;
+    }
+    .btn-clr{
+        background-color: #CCC8AA;
+        color: #F1EFEF;
+    }
 
 </style>
 {% endblock %}
@@ -53,22 +63,23 @@
             <div class="row">
                 {% for about_info in About %}
                     <div class="col"> 
+                        <h3>Hi,</h3>
                         <p>{{ about_info.about_sec }}</p>
                     </div>
                     <div class="col"> 
-                        <img src="{{ about_info.self_pic.url }}" alt="About Image" width="150px" height="150px" style="border-radius: 50%;">
+                        <img class="self-img" src="{{ about_info.self_pic.url }}" alt="About Image">
                 {% endfor %}
                 </div>
             </div>
             <div class="row">
                 <div class="col-4">
                     <a href="{% static '../images/resume.pdf' %}" download>
-                        <button type="button" class="btn btn-outline-dark"> Resume</button>
+                        <button type="button" class="btn btn-clr "> Resume</button>
                     </a>
                 </div>
                 <div class="col-6">
                     <a href="{% url 'contact' %}">
-                        <button type="button" class="btn btn-dark">Contact</button>
+                        <button type="button" class="btn btn-clr">Contact</button>
                     </a>
                     
                 </div>

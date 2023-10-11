@@ -22,7 +22,10 @@
 </style>
 {% endblock %}
 
+
+
 {% block body %}
+
 <div class="container">
     <form action="{% url 'contact' %}" method="post">
         {% csrf_token %}
@@ -30,4 +33,5 @@
         <input type="submit">
     </form>
 </div>
+
 {% endblock %}
