@@ -7,6 +7,13 @@
 {% block css %}
 
 <style>
+    a{
+        text-decoration: none;
+}
+    h4{
+        margin-bottom: 50px;
+        margin-left: 300px;
+    }
     .container{
         margin: auto;
         padding-bottom: 60px;
@@ -23,9 +30,13 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
+        align-self: center;
+        margin-top: 10px;
     }
     .skill-row{
         margin-top:50px ;
+        margin-left: 320px;
+       
     }
     .carousel-inner .carousel-item img {
         max-height: 250px; 
@@ -47,9 +58,16 @@
         border-radius: 50%;
         margin-top: 50px;
     }
-    .btn-clr{
+    .btn-clr,.card-bg{
         background-color: #CCC8AA;
         color: #F1EFEF;
+    }
+    .card{
+        align-self: center;
+        margin-right: 20px;
+    }
+    .card-text{
+        text-align: center;
     }
 
 </style>
@@ -93,20 +111,17 @@
 <!-- --------------------skills----------------------------- -->
 
 <div class="container">
-    <div class="skills">
-        <h3>Skills</h3>
-        <div class="row skill-row">
-            {% for s in skils %}
-                <div class="col-1">
-                    <div class="row-3">
-                        <img class="sk_photo" src="{{ s.skill_pic.url}}" alt="skill pic" >
-                    </div>
-                    <div class="row">
-                        <p>{{ s.skill }}</p>
-                    </div>
+    <h4>Skills</h4>
+    <div class="row skill-row">
+        
+        {% for s in skils %}
+            <div class="card card-bg" style="width: 6.7rem;">
+                <img class="sk_photo" src="{{ s.skill_pic.url}}" class="card-img-top" alt="skill image">
+                <div class="card-body">
+                    <p class="card-text" style="align-self: center;">{{ s.skill }}</p>
                 </div>
+            </div>
         {% endfor %}
-        </div>
     </div>
 </div>
 
