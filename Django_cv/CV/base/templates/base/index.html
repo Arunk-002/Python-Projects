@@ -11,12 +11,9 @@
         text-decoration: none;
 }
     h4{
+        margin-top: 100px;
         margin-bottom: 50px;
-        margin-left: 300px;
-    }
-    .container{
-        margin: auto;
-        padding-bottom: 60px;
+        margin-left: 500px;
     }
     .about{
         margin-top: 150px;
@@ -35,7 +32,8 @@
     }
     .skill-row{
         margin-top:50px ;
-        margin-left: 320px;
+        margin-left: 300px;
+        margin-bottom: 80px;
        
     }
     .carousel-inner .carousel-item img {
@@ -44,6 +42,14 @@
     #carouselExampleCaptions {
         margin-top: 50px; 
         max-width: 600px;
+    }
+    .carousel-caption{
+        opacity: 0;
+    }
+    .carousel-caption:hover{
+        transition: .3s;
+        transition-delay: .3s;
+        opacity: 100%;
     }
     .footer-image{
         margin-top: 50px;
@@ -58,16 +64,14 @@
         border-radius: 50%;
         margin-top: 50px;
     }
-    .btn-clr,.card-bg{
-        background-color: #CCC8AA;
-        color: #F1EFEF;
-    }
+
     .card{
         align-self: center;
         margin-right: 20px;
     }
     .card-text{
         text-align: center;
+        font-size: 15px;
     }
 
 </style>
@@ -112,15 +116,16 @@
 
 <div class="container">
     <h4>Skills</h4>
-    <div class="row skill-row">
-        
+    <div class="row skill-row">     
         {% for s in skils %}
-            <div class="card card-bg" style="width: 6.7rem;">
+            <div class="card card-bg" style="width: 7rem;">
                 <img class="sk_photo" src="{{ s.skill_pic.url}}" class="card-img-top" alt="skill image">
                 <div class="card-body">
                     <p class="card-text" style="align-self: center;">{{ s.skill }}</p>
                 </div>
             </div>
+            {% if forloop.counter|divisibleby:4 %}</div><div class="row skill-row">{% endif %} <!--this line checks
+            whether the current value of s is divisible by 4 if yes then a new row is printed    -->
         {% endfor %}
     </div>
 </div>
